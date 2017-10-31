@@ -1,5 +1,15 @@
 'use strict';
 
+const hours = ['6am', '7am', '8am', '9am', '10am', '11am', 'noon', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+function render(n){
+    const ul = document.getElementById('whatever');
+    const li = document.createElement('li');
+    li.textContent = hours[n] + ': ' + sphPDX[n + 1] + ' cookies';
+    ul.appendChild(li);
+
+}
+
+
 function custPerHour(minCustomers, maxCustomers) {
     minCustomers = Math.ceil(minCustomers);
     maxCustomers = Math.floor(maxCustomers);
@@ -16,19 +26,22 @@ const pdxAirport = {
     maxCustomers: 65,
     avgSales: 6.3,
     custPerHour: custPerHour,
-    salesPerHour: salesPerHour
+    salesPerHour: salesPerHour,
+    render: render
 };
 
 
 let cphPDX = [custPerHour(pdxAirport.minCustomers, pdxAirport.maxCustomers)];
 let sphPDX = [parseInt((pdxAirport.salesPerHour(pdxAirport.avgSales, cphPDX)))];
-for(let i = 1; i < 14; i++){
+for(let i = 0; i < 14; i++){
     cphPDX.push(custPerHour(pdxAirport.minCustomers, pdxAirport.maxCustomers));
 };
 console.log(cphPDX);
-for(let n = 1; n < 14; n++){
+for(let n = 0; n < 14; n++){
     sphPDX.push(parseInt(salesPerHour(pdxAirport.avgSales, cphPDX[n])));
+    render(n);
 };
+
 console.log(sphPDX);
 // for(let i= 0; i < 14; i++){
 //     totalSalesPerHour.push()
