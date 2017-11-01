@@ -45,12 +45,12 @@ const waterfront = new Store(2, 16, 4.6, custPerHour, salesPerHour, render);
 function calculateCookies(object, line) {
     let airportArray = [];
     for(let i = 0; i < hours.length; i++){
-        let cph = custPerHour(object.minCustomers, object.maxCustomers);
-        let sph = object.salesPerHour(oject.avgSales, cph);
+        const cph = custPerHour(object.minCustomers, object.maxCustomers);
+        const sph = object.salesPerHour(object.avgSales, cph);
         airportArray.push(sph);
         render(i, line, airportArray);
     };
-    console.log(airportarray);
+    console.log(airportArray);
 };
 
 for(let i = 0; i < 15; i++){
