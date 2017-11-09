@@ -31,8 +31,8 @@ const pdxAirport = {
 };
 
 
-let cphPDX = [custPerHour(pdxAirport.minCustomers, pdxAirport.maxCustomers)];
-let sphPDX = [parseInt((pdxAirport.salesPerHour(pdxAirport.avgSales, cphPDX)))];
+const cphPDX = [custPerHour(pdxAirport.minCustomers, pdxAirport.maxCustomers)];
+const sphPDX = [parseInt((pdxAirport.salesPerHour(pdxAirport.avgSales, cphPDX)))];
 for(let i = 0; i < 14; i++){
     cphPDX.push(custPerHour(pdxAirport.minCustomers, pdxAirport.maxCustomers));
 };
@@ -50,7 +50,7 @@ console.log(sphPDX);
 // let totalSalesPerHour.push(x);
 // console.log(totalSalesPerHour);
 
-const  pioneerSquare= {
+const  pioneerSquare = {
     minCustomers: 3,
     maxCustomers: 24,
     avgSales: 1.2,
@@ -58,8 +58,8 @@ const  pioneerSquare= {
     salesPerHour: salesPerHour,
 };
 
-let cphPioneer = [custPerHour(pioneerSquare.minCustomers, pioneerSquare.maxCustomers)];
-let sphPioneer = [parseInt((pioneerSquare.salesPerHour(pioneerSquare.avgSales, cphPioneer)))];
+const cphPioneer = [custPerHour(pioneerSquare.minCustomers, pioneerSquare.maxCustomers)];
+const sphPioneer = [parseInt((pioneerSquare.salesPerHour(pioneerSquare.avgSales, cphPioneer)))];
 for(let i = 1; i < 14; i++){
     cphPioneer.push(custPerHour(pioneerSquare.minCustomers, pioneerSquare.maxCustomers));
 };
@@ -76,8 +76,8 @@ const powells = {
     salesPerHour: salesPerHour,
 };
 
-let cphPowells = [custPerHour(powells.minCustomers, powells.maxCustomers)];
-let sphPowells = [parseInt((powells.salesPerHour(powells.avgSales, cphPowells)))];
+const cphPowells = [custPerHour(powells.minCustomers, powells.maxCustomers)];
+const sphPowells = [parseInt((powells.salesPerHour(powells.avgSales, cphPowells)))];
 for(let i = 1; i < 14; i++){
     cphPowells.push(custPerHour(powells.minCustomers, powells.maxCustomers));
 };
@@ -94,8 +94,8 @@ const stJohns = {
     salesPerHour: salesPerHour,
 };
 
-let cphStJohns = [custPerHour(stJohns.minCustomers, stJohns.maxCustomers)];
-let sphStJohns = [parseInt((stJohns.salesPerHour(stJohns.avgSales, cphStJohns)))];
+const cphStJohns = [custPerHour(stJohns.minCustomers, stJohns.maxCustomers)];
+const sphStJohns = [parseInt((stJohns.salesPerHour(stJohns.avgSales, cphStJohns)))];
 for(let i = 1; i < 14; i++){
     cphStJohns.push(custPerHour(stJohns.minCustomers, stJohns.maxCustomers));
 };
@@ -112,8 +112,8 @@ const waterfront = {
     salesPerHour: salesPerHour,
 };
 
-let cphWaterfront = [custPerHour(waterfront.minCustomers, waterfront.maxCustomers)];
-let sphWaterfront = [parseInt((waterfront.salesPerHour(waterfront.avgSales, cphWaterfront)))];
+const cphWaterfront = [custPerHour(waterfront.minCustomers, waterfront.maxCustomers)];
+const sphWaterfront = [parseInt((waterfront.salesPerHour(waterfront.avgSales, cphWaterfront)))];
 for(let i = 1; i < 14; i++){
     cphWaterfront.push(custPerHour(waterfront.minCustomers, waterfront.maxCustomers));
 };
