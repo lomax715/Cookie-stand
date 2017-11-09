@@ -1,17 +1,21 @@
 'use strict';
 
+let x = o;
+
 const hours = [ '', '6am', '7am', '8am', '9am', '10am', '11am', 'noon', '1pm', '2pm', '3pm',
     '4pm', '5pm', '6pm', '7pm', '8pm'];
 
-Store.prototype.renderHours = function(n) {
+function renderHours(n) {
     const hrs = document.getElementById('firstList');
     const td = document.createElement('td');
     td.textContent = hours[n];
     hrs.appendChild(td);
 };
 
-Store.prototype.render = function(parent, sph) {
-    const tr = document.getElementById(parent);
+Store.prototype.render = function(sph) {
+    const tableRow = document.getElementById('myTable');
+    const tr = document.createElement('tr');
+    tableRow.appendChild(tr);
     let td = document.createElement('td');
     td.textContent = this.name;
     tr.appendChild(td);
@@ -61,10 +65,29 @@ function calculateCookies(object, line) {
 
 for(let i = 0; i < 16; i++){
     Store.prototype.renderHours(i);
-}
+};
+
+for(let i = 0; i < 16; i++) {
+    renderHours(i);
+};
+
+const form = document.getElementById('new-store');
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const minCustomers = document.getElementById('minCustomers').value;
+    const maxCustomers = document.getElementById('maxCustomers').value;
+    const avgSales = document.getElementById('avgSales').value;
+
+    const newStore = new Store(name, minCustomers, maxCustomers, avgSales, custPerHour, salesPerHour);
+
+    calculateCookies(newStore, 'eigthList');
+});
 
 calculateCookies(pdxAirport, 'secondList');
 calculateCookies(pioneerSquare, 'thirdList');
 calculateCookies(powells, 'fourthList');
 calculateCookies(stJohns, 'fifthList');
 calculateCookies(waterfront, 'sixthList');
+
